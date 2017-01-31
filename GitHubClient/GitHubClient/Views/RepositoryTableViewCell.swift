@@ -1,7 +1,7 @@
 import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
-    static var reuseIdentifier: String? {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
 
@@ -67,6 +67,7 @@ class RepositoryTableViewCell: UITableViewCell {
 
         NSLayoutConstraint.activate([ descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
                                       descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+                                      descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
                                       descriptionLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor) ])
     }
 
@@ -76,5 +77,12 @@ class RepositoryTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([ stargazersCountLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
                                       stargazersCountLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
                                       stargazersCountLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8) ])
+    }
+
+    func render(repository: Repository) {
+        let details = RepositoryDetails(repository: repository)
+        nameLabel.text = details.name
+        descriptionLabel.text = details.description
+        stargazersCountLabel.text = details.stargazerCount
     }
 }
