@@ -12,6 +12,7 @@
 		B3A3F7331E400D7400F84D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A3F7311E400D7400F84D30 /* LaunchScreen.storyboard */; };
 		B3A3F73B1E40103B00F84D30 /* Redux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3F73A1E40103B00F84D30 /* Redux.framework */; };
 		B3A3F73C1E40103B00F84D30 /* Redux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3F73A1E40103B00F84D30 /* Redux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3A3F7411E4010F100F84D30 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7401E4010F100F84D30 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		B3A3F7321E400D7400F84D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3A3F7341E400D7400F84D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A3F73A1E40103B00F84D30 /* Redux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Redux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A3F7401E4010F100F84D30 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +71,11 @@
 		B3A3F72C1E400D7400F84D30 /* GitHubClient */ = {
 			isa = PBXGroup;
 			children = (
+				B3A3F73F1E4010DF00F84D30 /* Models */,
 				B3A3F72D1E400D7400F84D30 /* AppDelegate.swift */,
 				B3A3F72F1E400D7400F84D30 /* Assets.xcassets */,
-				B3A3F7311E400D7400F84D30 /* LaunchScreen.storyboard */,
 				B3A3F7341E400D7400F84D30 /* Info.plist */,
+				B3A3F7311E400D7400F84D30 /* LaunchScreen.storyboard */,
 			);
 			path = GitHubClient;
 			sourceTree = "<group>";
@@ -83,6 +86,15 @@
 				B3A3F73A1E40103B00F84D30 /* Redux.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3A3F73F1E4010DF00F84D30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3A3F7401E4010F100F84D30 /* Repository.swift */,
+			);
+			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */,
+				B3A3F7411E4010F100F84D30 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +183,7 @@
 				B3A3F7321E400D7400F84D30 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

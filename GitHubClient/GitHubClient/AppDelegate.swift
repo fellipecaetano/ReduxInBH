@@ -10,6 +10,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = .white
         self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
+
+        let service = RepositoryService(username: "fellipecaetan")
+
+        service.fetch { repositories, error in
+            print(repositories)
+            print(error?.localizedDescription ?? "")
+        }
+
         return true
     }
 }
