@@ -17,6 +17,7 @@
 		B3A3F7461E4022F200F84D30 /* RepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7451E4022F200F84D30 /* RepositoriesView.swift */; };
 		B3A3F7491E40245800F84D30 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7481E40245800F84D30 /* RepositoriesViewController.swift */; };
 		B3A3F74C1E40253100F84D30 /* RepositoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F74B1E40253100F84D30 /* RepositoryDetails.swift */; };
+		B3A3F7521E402BF300F84D30 /* AppRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7511E402BF300F84D30 /* AppRedux.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		B3A3F7451E4022F200F84D30 /* RepositoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesView.swift; sourceTree = "<group>"; };
 		B3A3F7481E40245800F84D30 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		B3A3F74B1E40253100F84D30 /* RepositoryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetails.swift; sourceTree = "<group>"; };
+		B3A3F7511E402BF300F84D30 /* AppRedux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRedux.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A3F73F1E4010DF00F84D30 /* Models */,
+				B3A3F7501E402BE900F84D30 /* Redux */,
 				B3A3F7471E40244C00F84D30 /* ViewControllers */,
 				B3A3F74A1E40252A00F84D30 /* ViewModels */,
 				B3A3F7421E40200600F84D30 /* Views */,
@@ -121,7 +124,6 @@
 			children = (
 				B3A3F7481E40245800F84D30 /* RepositoriesViewController.swift */,
 			);
-			name = ViewControllers;
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
@@ -130,8 +132,16 @@
 			children = (
 				B3A3F74B1E40253100F84D30 /* RepositoryDetails.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B3A3F7501E402BE900F84D30 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				B3A3F7511E402BF300F84D30 /* AppRedux.swift */,
+			);
+			name = Redux;
+			path = Redux;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +222,7 @@
 				B3A3F7441E40201200F84D30 /* RepositoryTableViewCell.swift in Sources */,
 				B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */,
 				B3A3F7411E4010F100F84D30 /* Repository.swift in Sources */,
+				B3A3F7521E402BF300F84D30 /* AppRedux.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
