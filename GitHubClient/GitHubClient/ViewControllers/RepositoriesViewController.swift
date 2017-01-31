@@ -21,10 +21,22 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        fetchRepositories()
+        refreshControl.addTarget(self, action: #selector(fetchRepositories), for: .valueChanged)
+    }
 
+    @objc private func fetchRepositories() {
         service.fetch { repositories, _ in
             self.repositories = repositories
             self.tableView.reloadData()
+
+            if repositories.isEmpty {
+                self.tableView.backgroundView = EmptyStateView(message: "Nenhum repositório foi encontrado")
+            } else {
+                self.tableView.backgroundView = nil
+            }
+
+            self.refreshControl.endRefreshing()
         }
     }
 
@@ -47,6 +59,10 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource {
 fileprivate extension RepositoriesViewController {
     var tableView: UITableView {
         return smartView.tableView
+    }
+
+    var refreshControl: UIRefreshControl {
+        return smartView.refreshControl
     }
 
     var smartView: RepositoriesView {

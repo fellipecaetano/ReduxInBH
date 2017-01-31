@@ -18,6 +18,7 @@
 		B3A3F7491E40245800F84D30 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7481E40245800F84D30 /* RepositoriesViewController.swift */; };
 		B3A3F74C1E40253100F84D30 /* RepositoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F74B1E40253100F84D30 /* RepositoryDetails.swift */; };
 		B3A3F7521E402BF300F84D30 /* AppRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7511E402BF300F84D30 /* AppRedux.swift */; };
+		B3A3F7541E402F3400F84D30 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7531E402F3400F84D30 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		B3A3F7481E40245800F84D30 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		B3A3F74B1E40253100F84D30 /* RepositoryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetails.swift; sourceTree = "<group>"; };
 		B3A3F7511E402BF300F84D30 /* AppRedux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRedux.swift; sourceTree = "<group>"; };
+		B3A3F7531E402F3400F84D30 /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				B3A3F7451E4022F200F84D30 /* RepositoriesView.swift */,
 				B3A3F7431E40201200F84D30 /* RepositoryTableViewCell.swift */,
+				B3A3F7531E402F3400F84D30 /* EmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,7 +143,6 @@
 			children = (
 				B3A3F7511E402BF300F84D30 /* AppRedux.swift */,
 			);
-			name = Redux;
 			path = Redux;
 			sourceTree = "<group>";
 		};
@@ -218,6 +220,7 @@
 			files = (
 				B3A3F7461E4022F200F84D30 /* RepositoriesView.swift in Sources */,
 				B3A3F7491E40245800F84D30 /* RepositoriesViewController.swift in Sources */,
+				B3A3F7541E402F3400F84D30 /* EmptyStateView.swift in Sources */,
 				B3A3F74C1E40253100F84D30 /* RepositoryDetails.swift in Sources */,
 				B3A3F7441E40201200F84D30 /* RepositoryTableViewCell.swift in Sources */,
 				B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */,

@@ -11,6 +11,8 @@ class RepositoriesView: UIView {
         return tableView
     }()
 
+    let refreshControl = UIRefreshControl()
+
     init() {
         super.init(frame: UIScreen.main.bounds)
         setup()
@@ -21,8 +23,13 @@ class RepositoriesView: UIView {
     }
 
     private func setup() {
-        addSubview(tableView)
+        setupTableView()
         setNeedsUpdateConstraints()
+    }
+
+    private func setupTableView() {
+        tableView.addSubview(refreshControl)
+        addSubview(tableView)
     }
 
     override func updateConstraints() {
