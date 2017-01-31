@@ -10,7 +10,23 @@
 		B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F72D1E400D7400F84D30 /* AppDelegate.swift */; };
 		B3A3F7301E400D7400F84D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A3F72F1E400D7400F84D30 /* Assets.xcassets */; };
 		B3A3F7331E400D7400F84D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A3F7311E400D7400F84D30 /* LaunchScreen.storyboard */; };
+		B3A3F73B1E40103B00F84D30 /* Redux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3F73A1E40103B00F84D30 /* Redux.framework */; };
+		B3A3F73C1E40103B00F84D30 /* Redux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3F73A1E40103B00F84D30 /* Redux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3A3F73D1E40103B00F84D30 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3A3F73C1E40103B00F84D30 /* Redux.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B3A3F72A1E400D7400F84D30 /* GitHubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +34,7 @@
 		B3A3F72F1E400D7400F84D30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3A3F7321E400D7400F84D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3A3F7341E400D7400F84D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A3F73A1E40103B00F84D30 /* Redux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Redux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A3F73B1E40103B00F84D30 /* Redux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +52,7 @@
 		B3A3F7211E400D7400F84D30 = {
 			isa = PBXGroup;
 			children = (
+				B3A3F73E1E40104800F84D30 /* Frameworks */,
 				B3A3F72C1E400D7400F84D30 /* GitHubClient */,
 				B3A3F72B1E400D7400F84D30 /* Products */,
 			);
@@ -58,6 +77,14 @@
 			path = GitHubClient;
 			sourceTree = "<group>";
 		};
+		B3A3F73E1E40104800F84D30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3A3F73A1E40103B00F84D30 /* Redux.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,6 +95,7 @@
 				B3A3F7261E400D7400F84D30 /* Sources */,
 				B3A3F7271E400D7400F84D30 /* Frameworks */,
 				B3A3F7281E400D7400F84D30 /* Resources */,
+				B3A3F73D1E40103B00F84D30 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +313,7 @@
 				B3A3F7391E400D7400F84D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
