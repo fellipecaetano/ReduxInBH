@@ -17,17 +17,16 @@ class RepositoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .left
-        label.textColor = .lightGray
-        label.numberOfLines = 1
-        label.lineBreakMode = .byTruncatingTail
+        label.textColor = .darkGray
+        label.numberOfLines = 0
         return label
     }()
 
     private let stargazersCountLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
-        label.textAlignment = .left
-        label.textColor = .darkGray
+        label.textAlignment = .right
+        label.textColor = .lightGray
         label.numberOfLines = 1
         label.lineBreakMode = .byTruncatingTail
         return label
@@ -46,6 +45,7 @@ class RepositoryTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(stargazersCountLabel)
+        setNeedsUpdateConstraints()
     }
 
     override func updateConstraints() {
@@ -58,25 +58,26 @@ class RepositoryTableViewCell: UITableViewCell {
     private func constrainNameLabel() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([ nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-                                      nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8) ])
+        NSLayoutConstraint.activate([ nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12),
+                                      nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12) ])
     }
 
     private func constrainDescriptionLabel() {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([ descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-                                      descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-                                      descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+        NSLayoutConstraint.activate([ descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12),
+                                      descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+                                      descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12),
                                       descriptionLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor) ])
     }
 
     private func constrainStargazersCountLabel() {
         stargazersCountLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([ stargazersCountLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
+        NSLayoutConstraint.activate([ stargazersCountLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12),
                                       stargazersCountLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-                                      stargazersCountLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8) ])
+                                      stargazersCountLabel.leftAnchor.constraint(equalTo: nameLabel.rightAnchor, constant: 12),
+                                      stargazersCountLabel.widthAnchor.constraint(equalToConstant: 80) ])
     }
 
     func render(repository: Repository) {

@@ -1,7 +1,7 @@
 import UIKit
 
-class RepositoresView: UIView {
-    private let tableView: UITableView = {
+class RepositoriesView: UIView {
+    let tableView: UITableView = {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
@@ -22,6 +22,7 @@ class RepositoresView: UIView {
 
     private func setup() {
         addSubview(tableView)
+        setNeedsUpdateConstraints()
     }
 
     override func updateConstraints() {

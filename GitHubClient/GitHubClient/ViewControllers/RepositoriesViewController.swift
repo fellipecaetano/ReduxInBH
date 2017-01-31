@@ -7,10 +7,25 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource {
     init (service: RepositoryService) {
         self.service = service
         super.init(nibName: nil, bundle: nil)
+        title = "Repositories"
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        view = RepositoriesView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+
+        service.fetch { repositories, _ in
+            self.repositories = repositories
+            self.tableView.reloadData()
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,5 +41,15 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource {
 
         cell.render(repository: repositories[indexPath.row])
         return cell
+    }
+}
+
+fileprivate extension RepositoriesViewController {
+    var tableView: UITableView {
+        return smartView.tableView
+    }
+
+    var smartView: RepositoriesView {
+        return view as! RepositoriesView
     }
 }

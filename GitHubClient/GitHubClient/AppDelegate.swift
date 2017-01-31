@@ -8,16 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
-        self.window?.rootViewController = UIViewController()
+        self.window?.rootViewController = UINavigationController(
+            rootViewController: RepositoriesViewController(service: RepositoryService(username: "fellipecaetano"))
+        )
         self.window?.makeKeyAndVisible()
-
-        let service = RepositoryService(username: "fellipecaetano")
-
-        service.fetch { repositories, error in
-            print(repositories)
-            print(error?.localizedDescription ?? "")
-        }
-
         return true
     }
 }
