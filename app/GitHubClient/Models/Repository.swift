@@ -25,6 +25,7 @@ class RepositoryService {
     init (username: String) {
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        configuration.timeoutIntervalForRequest = 5
         self.session = URLSession(configuration: configuration)
         self.username = username
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B33545531E4119C2004352A8 /* RepositoriesRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33545521E4119C2004352A8 /* RepositoriesRedux.swift */; };
 		B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F72D1E400D7400F84D30 /* AppDelegate.swift */; };
 		B3A3F7301E400D7400F84D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A3F72F1E400D7400F84D30 /* Assets.xcassets */; };
 		B3A3F7331E400D7400F84D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A3F7311E400D7400F84D30 /* LaunchScreen.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B33545521E4119C2004352A8 /* RepositoriesRedux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesRedux.swift; sourceTree = "<group>"; };
 		B3A3F72A1E400D7400F84D30 /* GitHubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A3F72D1E400D7400F84D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3A3F72F1E400D7400F84D30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A3F7511E402BF300F84D30 /* AppRedux.swift */,
+				B33545521E4119C2004352A8 /* RepositoriesRedux.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				B3A3F7561E4034E800F84D30 /* LoadingIndicatorView.swift in Sources */,
 				B3A3F74C1E40253100F84D30 /* RepositoryDetails.swift in Sources */,
 				B3A3F7441E40201200F84D30 /* RepositoryTableViewCell.swift in Sources */,
+				B33545531E4119C2004352A8 /* RepositoriesRedux.swift in Sources */,
 				B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */,
 				B3A3F7411E4010F100F84D30 /* Repository.swift in Sources */,
 				B3A3F7521E402BF300F84D30 /* AppRedux.swift in Sources */,

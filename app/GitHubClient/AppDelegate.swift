@@ -4,7 +4,7 @@ import Redux
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let store = Store<AppState>(initialState: AppState(), reducer: AppReducer)
+    let store = Store<AppState>(initialState: .initial, reducer: AppReducer)
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window?.rootViewController = UINavigationController(
             rootViewController: RepositoriesViewController(
-                service: RepositoryService(username: "fellipecaetano")
+                service: RepositoryService(username: "fellipecaetano"),
+                store: store
             )
         )
 

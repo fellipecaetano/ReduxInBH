@@ -1,11 +1,15 @@
 import UIKit
+import Redux
 
 class RepositoriesViewController: UIViewController, UITableViewDataSource {
     private var repositories = [Repository]()
     private let service: RepositoryService
+    private unowned let store: Store<AppState>
+    private var unsubscribe: (() -> Void)?
 
-    init (service: RepositoryService) {
+    init (service: RepositoryService, store: Store<AppState>) {
         self.service = service
+        self.store = store
         super.init(nibName: nil, bundle: nil)
         title = "Repositories"
     }
@@ -21,24 +25,51 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        tableView.backgroundView = LoadingIndicatorView(message: "Carregando repositórios")
-        fetchRepositories()
-        refreshControl.addTarget(self, action: #selector(fetchRepositories), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(onRefresh(refreshControl:)), for: .valueChanged)
+        store.dispatch(LoadRepositoriesCommand(service: service))
     }
 
-    @objc private func fetchRepositories() {
-        service.fetch { repositories, _ in
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        unsubscribe = store.subscribe(render)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribe?()
+    }
+
+    private func render(state: AppState) {
+        switch state.repositories {
+        case .loading:
+            tableView.backgroundView = LoadingIndicatorView(message: "Carregando repositórios")
+            refreshControl.endRefreshing()
+
+        case .loaded(let repositories) where repositories.isEmpty:
+            tableView.backgroundView = EmptyStateView(message: "Nenhum repositório foi carregado")
+            self.repositories = []
+            tableView.reloadData()
+            refreshControl.endRefreshing()
+
+        case .loaded(let repositories):
+            tableView.backgroundView = nil
             self.repositories = repositories
-            self.tableView.reloadData()
+            tableView.reloadData()
+            refreshControl.endRefreshing()
 
-            if repositories.isEmpty {
-                self.tableView.backgroundView = EmptyStateView(message: "Nenhum repositório foi encontrado")
-            } else {
-                self.tableView.backgroundView = nil
-            }
+        case .refreshing, .none:
+            break
 
-            self.refreshControl.endRefreshing()
+        case .error:
+            tableView.backgroundView = EmptyStateView(message: "Ocorreu um erro ao carregar os repositórios")
+            repositories = []
+            tableView.reloadData()
+            refreshControl.endRefreshing()
         }
+    }
+
+    @objc private func onRefresh(refreshControl: UIRefreshControl) {
+        store.dispatch(RefreshRepositoriesCommand(service: service))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
