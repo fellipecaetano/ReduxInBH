@@ -13,6 +13,7 @@
 		B3A3F73B1E40103B00F84D30 /* Redux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3F73A1E40103B00F84D30 /* Redux.framework */; };
 		B3A3F73C1E40103B00F84D30 /* Redux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3F73A1E40103B00F84D30 /* Redux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3A3F7411E4010F100F84D30 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7401E4010F100F84D30 /* Repository.swift */; };
+		B3A3F7441E40201200F84D30 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3F7431E40201200F84D30 /* RepositoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		B3A3F7341E400D7400F84D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A3F73A1E40103B00F84D30 /* Redux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Redux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A3F7401E4010F100F84D30 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		B3A3F7431E40201200F84D30 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A3F73F1E4010DF00F84D30 /* Models */,
+				B3A3F7421E40200600F84D30 /* Views */,
 				B3A3F72D1E400D7400F84D30 /* AppDelegate.swift */,
 				B3A3F72F1E400D7400F84D30 /* Assets.xcassets */,
 				B3A3F7341E400D7400F84D30 /* Info.plist */,
@@ -93,8 +96,16 @@
 			children = (
 				B3A3F7401E4010F100F84D30 /* Repository.swift */,
 			);
-			name = Models;
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B3A3F7421E40200600F84D30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3A3F7431E40201200F84D30 /* RepositoryTableViewCell.swift */,
+			);
+			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A3F7441E40201200F84D30 /* RepositoryTableViewCell.swift in Sources */,
 				B3A3F72E1E400D7400F84D30 /* AppDelegate.swift in Sources */,
 				B3A3F7411E4010F100F84D30 /* Repository.swift in Sources */,
 			);

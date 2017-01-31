@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
 
-        let service = RepositoryService(username: "fellipecaetan")
+        let service = RepositoryService(username: "fellipecaetano")
 
         service.fetch { repositories, error in
             print(repositories)
