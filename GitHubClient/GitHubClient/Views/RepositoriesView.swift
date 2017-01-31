@@ -39,7 +39,6 @@ class RepositoriesView: UIView {
 
     private func constrainTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([ tableView.leftAnchor.constraint(equalTo: leftAnchor),
                                       tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
                                       tableView.rightAnchor.constraint(equalTo: rightAnchor),

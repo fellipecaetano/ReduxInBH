@@ -22,8 +22,10 @@ class RepositoryService {
     private let session: URLSession
     private let username: String
 
-    init (session: URLSession = .shared, username: String) {
-        self.session = session
+    init (username: String) {
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        self.session = URLSession(configuration: configuration)
         self.username = username
     }
 

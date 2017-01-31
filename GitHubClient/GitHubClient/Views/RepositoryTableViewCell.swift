@@ -57,14 +57,12 @@ class RepositoryTableViewCell: UITableViewCell {
 
     private func constrainNameLabel() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([ nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12),
                                       nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12) ])
     }
 
     private func constrainDescriptionLabel() {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([ descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12),
                                       descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
                                       descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12),
@@ -73,7 +71,6 @@ class RepositoryTableViewCell: UITableViewCell {
 
     private func constrainStargazersCountLabel() {
         stargazersCountLabel.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([ stargazersCountLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12),
                                       stargazersCountLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
                                       stargazersCountLabel.leftAnchor.constraint(equalTo: nameLabel.rightAnchor, constant: 12),

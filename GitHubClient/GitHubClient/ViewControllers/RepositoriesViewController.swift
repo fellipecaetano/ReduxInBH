@@ -21,6 +21,7 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.backgroundView = LoadingIndicatorView(message: "Carregando repositórios")
         fetchRepositories()
         refreshControl.addTarget(self, action: #selector(fetchRepositories), for: .valueChanged)
     }
