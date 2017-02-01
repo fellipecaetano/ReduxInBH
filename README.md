@@ -11,7 +11,7 @@ This repository houses the bootstrap project I used as reference for a talk I ga
 
 ## About the project
 
-The bootstrap project is simply a table view displaying a list of an user's GitHub repositories. The whole of the code is in the `master` branch.
+The bootstrap project is simply a table view displaying a list of an user's GitHub repositories. The base project is in the `master` branch and the reference implementation is in the `0.1.0` tag.
 
 ## Requirements
 
