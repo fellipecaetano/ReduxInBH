@@ -9,9 +9,24 @@ enum CounterAction: Action {
 }
 
 let store = Store<Int>(initialState: 0) { state, action in
-    return state
+    switch action {
+    case CounterAction.increment(let amount):
+        return state + amount
+    case CounterAction.decrement(let amount):
+        return state - amount
+    default:
+        return state
+    }
 }
 
-_ = store.subscribe { state in
+let unsubscribe = store.subscribe { state in
     print("Current counter: \(state)")
 }
+
+store.dispatch(CounterAction.increment(5))
+store.dispatch(CounterAction.decrement(3))
+store.dispatch(CounterAction.increment(7))
+
+unsubscribe()
+
+store.dispatch(CounterAction.decrement(1))
